@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik',sans-serif;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #FFDEE9;
+    background-image: linear-gradient(0deg, #FC5C7D 0%, #6A82FB 100%);
+}
+
+.container{
+    width: 850px;
+    background: #ffffff5b;
+    border-radius: 10px;
+    padding: 30px 30px 30px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.container.disable :where(.editing-panel, .reset-filters, .save-img){
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.container h1{
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.container .wrapper{
+    display: flex;
+    margin: 15px 0;
+    min-height: 335px;
+}
+
+.wrapper .editing-panel{
+    width: 280px;
+    padding: 15px 20px;
+    border: 2px solid gray;
+    border-radius: 7px;
+}
+
+.editing-panel .title{
+    display: block;
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+
+.editing-panel .options, .controls{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.editing-panel button{
+    height: 40px;
+    color: gray;
+    font-size: 14px;
+    border-radius: 3px;
+    border: 1px solid gray;
+    margin-bottom: 8px;
+    background: #ffffff5b;
+    transition: 0.2s;
+
+}
+
+.editing-panel .filters button{
+    width: calc(100% / 2 - 4px);
+}
+
+.editing-panel .filters button.active{
+    color: white;
+    background-color: #FC5C7D;
+    border: 1px solid #FC5C7D;
+}
+
+.editing-panel button:hover{
+    background-color: #6A82FB;
+}
+
+.filters .sliders{
+    margin-top: 12px;
+}
+
+.filters .sliders .filter-info{
+    display: flex;
+    justify-content: space-between;
+    color: #464646;
+    font-size: 14px;
+}
+
+.filters .sliders input{
+    width: 100%;
+    height: 5px;
+    accent-color: #6A82FB
+}
+
+
+.editing-panel .rotations{
+    margin-top: 15px;
+}
+
+.editing-panel .rotations button{
+    width: calc(100%/4 - 3px);
+
+}
+
+.rotations button:nth-child(3),
+.rotations button:nth-child(4){
+    font-size: 18px;
+}
+
+.wrapper .preview-image{
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+}
+
+.preview-image img{
+    max-width: 490px;
+    max-height: 335px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.controls button{
+    font-size: 14px;
+    padding: 11px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.2s;
+}
+
+.controls .reset-filters{
+    background-color: red;
+    color: white;
+    border: 1px solid #ffffff5b;
+}
+
+.controls .reset-filters:hover{
+    background-color: darkgrey;
+}
+
+.controls .choose-img, .save-img{
+    background-color: #464646;
+    color: azure;
+}
+
+.controls .choose-img:hover, .save-img:hover{
+    background-color: black;
+}
+
+
+
+/* RESPONSIVE CODE */
+
+@media screen and (max-width: 760px) {
+    .container{
+    padding: 25px;
+    }
+    .container .wrapper{
+    flex-wrap: wrap-reverse;
+    }
+    .wrapper .editing-panel{
+    width: 100%;
+    }
+    .wrapper .preview-image{
+    width: 100%;
+    margin: 0 0 15px;
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+    .controls button{
+    width: 100%;
+    margin-bottom: 10px;
+    }
+    .controls .rows{
+    width: 100%;
+    }
+    .controls .rows .save-img{
+    margin-left: 0px;
+    }
+}
